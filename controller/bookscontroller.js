@@ -1,10 +1,9 @@
-const db = require('../model');
- 
+const db = require('../model')
 const book = db.books
 
 
 const add_books = async(req,res)=>{
-    const {BookName,AuthorName,Price,IsActive} = req.body
+    const {BookName,AuthorName,Price,IsActive} = req.body    //use destructuring assignmet here.
     const data = await book.create({BookName,AuthorName,Price,IsActive})
     res.status(200).json({data:data,message:"book name inserted"})
 }
@@ -36,3 +35,7 @@ module.exports = {
     delete_book
 
 }
+
+
+
+
